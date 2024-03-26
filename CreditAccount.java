@@ -14,16 +14,16 @@ public class CreditAccount extends Account {
     }
 
     public Boolean Deposit(int amountAdded) {
-        if (this.balance <= 0) {
-            this.balance = 0;
+        if (balance <= 0) {
+            balance = 0;
             System.out.println("Credit is payed off");
             return false;
-        } else if (this.balance < amountAdded) {
+        } else if (balance < amountAdded) {
             System.out.println("The balance is less than amount you are trying to pay");
 
             return false;
         } else {
-            this.balance = this.balance - amountAdded;
+            balance = balance - amountAdded;
             System.out.println("The transaction completed successfully");
             AccountBalance();
             return true;
@@ -31,7 +31,8 @@ public class CreditAccount extends Account {
     }
 
     public Boolean Withdraw(int amountTaken) {
-            if((this.creditLimit - this.balance) >= amountTaken){
+
+            if((balance + amountTaken) <= creditLimit){
                 balance += amountTaken;
                 System.out.println("The transaction completed successfully");
                 AccountBalance();
@@ -44,7 +45,7 @@ public class CreditAccount extends Account {
     }
 
     public void AccountBalance() {
-        System.out.println("Your Credit balance is: " + this.balance);
+        System.out.println("Your Credit balance is: " + balance);
     }
 
     public void setBalance(double _balance){

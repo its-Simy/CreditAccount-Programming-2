@@ -10,7 +10,8 @@ public class Main {
 
         CreditAccount c1 = new CreditAccount("A-100-000", "Simon", 1000, 100 );
         c1.Deposit(100);
-        c1.Withdraw(500);
+        c1.Withdraw(1100);
+
 
 
 
